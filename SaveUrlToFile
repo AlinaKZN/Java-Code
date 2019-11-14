@@ -1,4 +1,5 @@
         URL url = new URL(urlString);
         InputStream inputStream = url.openStream();
         Path tempFile = Files.createTempFile("temp", ".tmp");
-        Files.copy(inputStream, tempFile);
+        Files.copy(inputStream, tempFile, StandardCopyOption.REPLACE_EXISTING);
+        inputStream.close();
