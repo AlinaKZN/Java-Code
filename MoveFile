@@ -1,0 +1,5 @@
+        Path newFile = null;
+        if (Files.exists(tempFile)) {
+            newFile = Paths.get(downloadDirectory + urlString.substring(urlString.lastIndexOf("/"), urlString.length()));
+            Files.move(tempFile, newFile, StandardCopyOption.REPLACE_EXISTING);
+        }
