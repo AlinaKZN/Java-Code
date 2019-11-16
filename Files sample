@@ -21,3 +21,10 @@
        Files.delete(testFile1);
        System.out.println("Файл все еще существует?");
        System.out.println(Files.exists(Paths.get("C:\\Users\\Username\\Desktop\\testDirectory\\testFile111.txt")));
+       
+       //читтает весь файл в список
+       List<String> lines = Files.readAllLines(Paths.get("C:\\Users\\Username\\Desktop\\pushkin.txt"), UTF_8);
+
+       for (String s: lines) {
+           System.out.println(s);
+       }
