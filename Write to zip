@@ -1,0 +1,11 @@
+        FileOutputStream zipFile = new FileOutputStream(zipPath);
+        ZipOutputStream zip = new ZipOutputStream(zipFile);
+
+        for (Map.Entry<String, byte[]> file : fileMap.entrySet()) {
+            zip.putNextEntry(new ZipEntry(file.getKey()));
+            zip.write(file.getValue());
+            zip.closeEntry();
+        }
+
+        zip.closeEntry();
+        zip.close();
