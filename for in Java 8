@@ -1,0 +1,1 @@
+properties.values().forEach(System.out::println);
