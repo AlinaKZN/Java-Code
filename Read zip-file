@@ -1,0 +1,14 @@
+        FileInputStream zipInFile = new FileInputStream(zipPath);
+        ZipInputStream zipInputStream = new ZipInputStream(zipInFile);
+        ZipEntry zipEntry;
+        while ((zipEntry = zipInputStream.getNextEntry()) != null){
+            ByteArrayOutputStream data = new ByteArrayOutputStream();
+            byte[] readedBytes = new byte[1024];
+            int readedCount;
+            while ((readedCount = zipInputStream.read(readedBytes))!=-1){
+                data.write(readedBytes, 0, readedCount);
+            }
+            fileMap.put(zipEntry.getName(), data.toByteArray());
+        }
+        zipInputStream.close();
+        zipInFile.close();
