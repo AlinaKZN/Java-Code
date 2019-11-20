@@ -1,0 +1,10 @@
+	ObjectMapper mapper = new ObjectMapper();
+
+	//JSON file to Java object
+	Staff obj = mapper.readValue(new File("c:\\test\\staff.json"), Staff.class);
+
+	//JSON URL to Java object
+	Staff obj = mapper.readValue(new URL("http://some-domains/api/name.json"), Staff.class);
+
+	//JSON string to Java Object
+	Staff obj = mapper.readValue("{'name' : 'mkyong'}", Staff.class);
