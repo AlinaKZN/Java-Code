@@ -1,0 +1,15 @@
+ String line;
+
+    try {
+
+        BufferedReader bufReader = new BufferedReader(new FileReader("C:\\1.txt"));
+
+
+        while ((line = bufReader.readLine()) != null) {     
+        }
+
+    } catch (FileNotFoundException ex) {
+        ex.printStackTrace();
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    }
